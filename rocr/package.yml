@@ -1,0 +1,31 @@
+name       : ROCR
+version    : 2.5.0
+release    : 1
+source     :
+    - https://github.com/RadeonOpenCompute/ROCR-Runtime/archive/roc-2.5.0.tar.gz : 6678bdaf4f6d8ce6e4ed24131f4455c719c0a643c8479f3d69722caa8b4d7187
+license    : NCSA
+component  : programming.devel
+summary    : This repository includes the user-mode API interfaces and libraries necessary for host applications to launch compute kernels to available HSA ROCm kernel agents.
+description: |
+    This repository includes the user-mode API interfaces and libraries necessary for host applications to launch compute kernels to available HSA ROCm kernel agents.
+builddeps  :
+    - pkgconfig(libelf)
+    - ROCT
+setup      : |
+    cd src
+    mkdir -p build
+    cd build
+    %cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=%libdir%/rocm -DCMAKE_PREFIX_PATH=%libdir%/rocm/libhsakmt -DHSAKMT_LIB_PATH=%libdir%/rocm/lib64 -DHSAKMT_INC_PATH=%libdir%/rocm/include 
+build      : |
+    cd src/build
+    %make
+install    : |
+    cd src/build
+    %make_install
+
+    echo '/usr/lib64/rocm/hsa/lib' > hsa-rocr-dev.conf
+    install -Dm00644 hsa-rocr-dev.conf $installdir/usr/share/ld.so.conf.d/hsa-rocr-dev.conf
+
+
+
+    
