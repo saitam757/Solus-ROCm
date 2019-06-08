@@ -1,0 +1,18 @@
+name       : numactl
+version    : 2.0.12
+release    : 1
+source     :
+    - https://github.com/numactl/numactl/archive/v2.0.12.tar.gz : 7c3e819c2bdeb883de68bafe88776a01356f7ef565e75ba866c4b49a087c6bdf
+license    : GPL-2.0
+             GLPL-2.1
+component  : programming.devel
+summary    : Simple NUMA policy support. It consists of a numactl program to run other programs with a specific NUMA policy and a libnuma shared library ("NUMA API") to set NUMA policy in applications.
+description: |
+    Simple NUMA policy support. It consists of a numactl program to run other programs with a specific NUMA policy and a libnuma shared library ("NUMA API") to set NUMA policy in applications.
+setup      : |
+    sh autogen.sh
+    %configure
+build      : |
+    %make
+install    : |
+    %make_install
