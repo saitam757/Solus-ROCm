@@ -1,7 +1,9 @@
 # ROCm-Solbuild
 Trying to create packaging scripts for the [AMD Compute Stack](https://github.com/RadeonOpenCompute/ROCm) for Solus Linux eopkg,
 
-Build Order:
+Current Problem: Compiling HCC with error: Issue [here](https://github.com/RadeonOpenCompute/hcc/issues/1175)
+
+Created packages and order of build:
 
 1) Numactl: Status of building: Package created.
 
