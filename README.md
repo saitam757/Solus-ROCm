@@ -1,6 +1,5 @@
 # ROCm-Solbuild
-Trying to create scripts for the packaging of the ROCm modules in Solus,
-ROCm - Open Source Platform for HPC and Ultrascale GPU Computing
+Trying to create packaging scripts for the [AMD Compute Stack](https://github.com/RadeonOpenCompute/ROCm) for Solus Linux eopkg,
 
 Build Order:
 
