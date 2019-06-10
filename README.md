@@ -44,7 +44,7 @@ Build Order:
                 /usr/lib64/libhsakmt.so
                 
 3) Rocr:    ROCR-Runtime
-            Status of building: Package created:
+            Status of building: Package created.
                 
             "lseopkg ROCR-2.5.0-1-1-x86_64.eopkg" yields: 
                 /usr/lib64/libhsa-runtime64.so.1
@@ -66,8 +66,18 @@ Build Order:
                 /usr/include/hsa/hsa_ven_amd_loader.h
                 /usr/lib64/libhsa-runtime64.so
 
-
-
+4) Rocminfo:    ROCm Application for Reporting System Info 
+                Status of building: Package created.
+                
+            "lseopkg rocminfo-1.0.0-1-1-x86_64.eopkg" yields: 
+                /usr/bin/rocm_agent_enumerator
+                /usr/bin/rocminfo
+                
+5) rocm_bandwidth_test: Bandwidth test for ROCm 
+                        Status of building: Package created.
+                        
+            "lseopkg rocm_bandwidth_test-2.5.0-1-1-x86_64.eopkg" yields:
+                 /usr/bin/rocm_bandwidth_test
 
          
          
