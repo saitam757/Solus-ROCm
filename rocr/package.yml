@@ -11,20 +11,46 @@ description: |
 builddeps  :
     - pkgconfig(libelf)
     - ROCT
+    - ROCT-devel
+#rundeps    :
+#    - ROCT
 setup      : |
     cd src
     mkdir -p build
     cd build
-    %cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=%libdir%/rocm -DCMAKE_PREFIX_PATH=%libdir%/rocm/libhsakmt -DHSAKMT_LIB_PATH=%libdir%/rocm/lib64 -DHSAKMT_INC_PATH=%libdir%/rocm/include 
+    %cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=. 
 build      : |
     cd src/build
     %make
 install    : |
     cd src/build
-    %make_install
 
-    echo '/usr/lib64/rocm/hsa/lib' > hsa-rocr-dev.conf
-    install -Dm00644 hsa-rocr-dev.conf $installdir/usr/share/ld.so.conf.d/hsa-rocr-dev.conf
+    install -D -m 00644 libhsa-runtime64.so.1.1.9 $installdir/%libdir%/libhsa-runtime64.so.1.1.9
+    ln -sv libhsa-runtime64.so.1.1.9 $installdir/%libdir%/libhsa-runtime64.so.1
+    ln -sv libhsa-runtime64.so.1 $installdir/%libdir%/libhsa-runtime64.so
+
+    #echo '/usr/lib64/rocm/hsa/lib' > hsa-rocr-dev.conf
+    #install -Dm00644 hsa-rocr-dev.conf $installdir/usr/share/ld.so.conf.d/hsa-rocr-dev.conf
+    
+    cd ../inc
+    install -D -m 00644 amd_hsa_common.h $installdir/usr/include/hsa/amd_hsa_common.h
+    install -D -m 00644 amd_hsa_elf.h $installdir/usr/include/hsa/amd_hsa_elf.h
+    install -D -m 00644 amd_hsa_kernel_code.h $installdir/usr/include/hsa/amd_hsa_kernel_code.h
+    install -D -m 00644 amd_hsa_queue.h $installdir/usr/include/hsa/amd_hsa_queue.h
+    install -D -m 00644 amd_hsa_signal.h $installdir/usr/include/hsa/amd_hsa_signal.h
+    install -D -m 00644 Brig.h $installdir/usr/include/hsa/Brig.h
+    install -D -m 00644 hsa_api_trace.h $installdir/usr/include/hsa/hsa_api_trace.h
+    install -D -m 00644 hsa_ext_amd.h $installdir/usr/include/hsa/hsa_ext_amd.h
+    install -D -m 00644 hsa_ext_finalize.h $installdir/usr/include/hsa/hsa_ext_finalize.h
+    install -D -m 00644 hsa_ext_image.h $installdir/usr/include/hsa/hsa_ext_image.h
+    install -D -m 00644 hsa.h $installdir/usr/include/hsa/hsa.h
+    install -D -m 00644 hsa_ven_amd_aqlprofile.h $installdir/usr/include/hsa/hsa_ven_amd_aqlprofile.h
+    install -D -m 00644 hsa_ven_amd_loader.h $installdir/usr/include/hsa/hsa_ven_amd_loader.h
+
+
+
+    
+
 
 
 
