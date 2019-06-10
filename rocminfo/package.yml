@@ -1,0 +1,27 @@
+name       : rocminfo
+version    : 1.0.0
+release    : 1
+source     :
+    - https://github.com/RadeonOpenCompute/rocminfo/archive/1.0.0.tar.gz : 858823b8d0e42c1c2b1ee41bdb8410068a907a62ea1f629531db1b74664a1403
+license    : Open Source License (NCSA)
+component  : programming.devel
+summary    : ROCm Application for Reporting System Info
+description: |
+    ROCm Application for Reporting System Info
+builddeps  :
+    - ROCT
+    - ROCT-devel
+    - ROCR
+    - ROCR-devel
+setup      : |
+    mkdir -p build
+    cd build
+    %cmake -DROCM_DIR=/usr -DROCRTST_BLD_TYPE=Release -DROCRTST_BLD_BITS=64 ..
+build      : |
+    cd build
+    make
+install    : |
+    cd build
+    mkdir -p $installdir/usr/bin
+    install -Dm00755 rocminfo $installdir/usr/bin/rocminfo
+    install -Dm00755 rocm_agent_enumerator $installdir/usr/bin/rocm_agent_enumerator
