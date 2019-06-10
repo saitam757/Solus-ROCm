@@ -12,19 +12,24 @@ builddeps  :
     - pkgconfig(libpci)
     - pkgconfig(numa)
 setup      : |
-    mkdir -p build
+    mkdir -p build/bin
     cd build
-    %cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=%libdir%/rocm ..
+    %cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=. ..
 build      : |
     cd build
     %make
 install    : |
     cd build
-    %make_install
-    %make_install install-dev    
 
-    # mv $installdir/%libdir%/rocm/lib64 $installdir/%libdir%/rocm/lib
+    install -D -m 00644 libhsakmt.so.1.0.6 $installdir/%libdir%/libhsakmt.so.1.0.6
+    ln -sv libhsakmt.so.1.0.6 $installdir/%libdir%/libhsakmt.so.1
+    ln -sv libhsakmt.so.1 $installdir/%libdir%/libhsakmt.so
 
-    echo '/usr/lib64/rocm/lib64' > x86_64-libhsakmt.conf
-    install -Dm00644 x86_64-libhsakmt.conf $installdir/usr/share/ld.so.conf.d/x86_64-libhsakmt.conf
+    cd ../include
+    install -Dm00644 hsakmt.h $installdir/usr/include/hsakmt.h
+    install -Dm00644 hsakmttypes.h $installdir/usr/include/hsakmttypes.h
+    install -Dm00644 linux/kfd_ioctl.h $installdir/usr/include/linux/kfd_ioctl.h
+
+    #echo '/usr/lib64' > x86_64-libhsakmt.conf
+    #install -Dm00644 x86_64-libhsakmt.conf $installdir/usr/share/ld.so.conf.d/x86_64-libhsakmt.conf
 
