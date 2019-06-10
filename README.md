@@ -34,49 +34,38 @@ Build Order:
             Status of building: Package created.
          
             "lseopkg ROCT-2.5.0-1-1-x86_64.eopkg" yields: 
-                /usr/lib64/rocm/include/hsakmt.h
-                /usr/lib64/rocm/include/hsakmttypes.h
-                /usr/lib64/rocm/include/linux/kfd_ioctl.h
-                /usr/lib64/rocm/lib64/cmake/hsakmt/hsakmt-config-version.cmake
-                /usr/lib64/rocm/lib64/cmake/hsakmt/hsakmt-config.cmake
-                /usr/lib64/rocm/lib64/libhsakmt.so
-                /usr/lib64/rocm/lib64/libhsakmt.so.1
-                /usr/lib64/rocm/lib64/libhsakmt.so.1.0.6
-                /usr/lib64/rocm/libhsakmt/LICENSE.md
-                /usr/lib64/rocm/libhsakmt/libhsakmt.pc
-                /usr/share/ld.so.conf.d/x86_64-libhsakmt.conf
+                /usr/lib64/libhsakmt.so.1
+                /usr/lib64/libhsakmt.so.1.0.6
+                
+            "lseopkg ROCT-devel-2.5.0-1-1-x86_64.eopkg" yields:
+                /usr/include/hsakmt.h
+                /usr/include/hsakmttypes.h
+                /usr/include/linux/kfd_ioctl.h
+                /usr/lib64/libhsakmt.so
                 
 3) Rocr:    ROCR-Runtime
-            Status of building: Package created but build with errors:
+            Status of building: Package created:
                 
-                [Build] install successful
-                [Examine] Examining packages
-                [Errno 21] Is a directory: '/home/build/YPKG/root/ROCR/install/usr/lib64/rocm/include/hsa'
-                [Stripped] /usr/lib64/rocm/hsa/lib/libhsa-runtime64.so.1.1.9
-                [Dependency] /usr/lib64/rocm/hsa/lib/libhsa-runtime64.so.1.1.9 adds dependency on libstdc++.so.6 from libstdc++
-                Fatal: Unknown symbol: libhsakmt.so.1
-                
-            
             "lseopkg ROCR-2.5.0-1-1-x86_64.eopkg" yields: 
-                /usr/lib64/rocm/hsa/include/hsa/Brig.h
-                /usr/lib64/rocm/hsa/include/hsa/amd_hsa_common.h
-                /usr/lib64/rocm/hsa/include/hsa/amd_hsa_elf.h
-                /usr/lib64/rocm/hsa/include/hsa/amd_hsa_kernel_code.h
-                /usr/lib64/rocm/hsa/include/hsa/amd_hsa_queue.h
-                /usr/lib64/rocm/hsa/include/hsa/amd_hsa_signal.h
-                /usr/lib64/rocm/hsa/include/hsa/hsa.h
-                /usr/lib64/rocm/hsa/include/hsa/hsa_api_trace.h
-                /usr/lib64/rocm/hsa/include/hsa/hsa_ext_amd.h
-                /usr/lib64/rocm/hsa/include/hsa/hsa_ext_finalize.h
-                /usr/lib64/rocm/hsa/include/hsa/hsa_ext_image.h
-                /usr/lib64/rocm/hsa/include/hsa/hsa_ven_amd_aqlprofile.h
-                /usr/lib64/rocm/hsa/include/hsa/hsa_ven_amd_loader.h
-                /usr/lib64/rocm/hsa/lib/libhsa-runtime64.so
-                /usr/lib64/rocm/hsa/lib/libhsa-runtime64.so.1
-                /usr/lib64/rocm/hsa/lib/libhsa-runtime64.so.1.1.9
-                /usr/lib64/rocm/include/hsa
-                /usr/lib64/rocm/lib/libhsa-runtime64.so
-                /usr/share/ld.so.conf.d/hsa-rocr-dev.conf
+                /usr/lib64/libhsa-runtime64.so.1
+                /usr/lib64/libhsa-runtime64.so.1.1.9
+                
+            "lseopkg ROCR-devel-2.5.0-1-1-x86_64.eopkg" yields:
+                /usr/include/hsa/Brig.h
+                /usr/include/hsa/amd_hsa_common.h
+                /usr/include/hsa/amd_hsa_elf.h
+                /usr/include/hsa/amd_hsa_kernel_code.h
+                /usr/include/hsa/amd_hsa_queue.h
+                /usr/include/hsa/amd_hsa_signal.h
+                /usr/include/hsa/hsa.h
+                /usr/include/hsa/hsa_api_trace.h
+                /usr/include/hsa/hsa_ext_amd.h
+                /usr/include/hsa/hsa_ext_finalize.h
+                /usr/include/hsa/hsa_ext_image.h
+                /usr/include/hsa/hsa_ven_amd_aqlprofile.h
+                /usr/include/hsa/hsa_ven_amd_loader.h
+                /usr/lib64/libhsa-runtime64.so
+
 
 
 
