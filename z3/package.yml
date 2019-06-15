@@ -11,8 +11,7 @@ description: |
 builddeps  :
     - pkgconfig(python3)
 setup      : |
-    mkdir -p build/pt
-    mkdir -p build/install
+    mkdir -p build
     cd build
     %cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr -DBUILD_PYTHON_BINDINGS=0 -DCMAKE_INSTALL_LIBDIR=lib64
 build      : |
