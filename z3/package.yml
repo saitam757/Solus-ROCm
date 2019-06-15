@@ -1,0 +1,23 @@
+name       : z3
+version    : 4.8.5
+release    : 1
+source     :
+    - https://github.com/Z3Prover/z3/archive/Z3-4.8.5.tar.gz : 4e8e232887ddfa643adb6a30dcd3743cb2fa6591735fbd302b49f7028cdc0363
+license    : MIT
+component  : programming.devel
+summary    : Z3 is a theorem prover from Microsoft Research.
+description: |
+    Z3 is a theorem prover from Microsoft Research.
+builddeps  :
+    - pkgconfig(python3)
+setup      : |
+    mkdir -p build/pt
+    mkdir -p build/install
+    cd build
+    %cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr -DBUILD_PYTHON_BINDINGS=0 -DCMAKE_INSTALL_LIBDIR=lib64
+build      : |
+    cd build
+    %make -j6
+install    : |
+    cd build
+    %make_install
