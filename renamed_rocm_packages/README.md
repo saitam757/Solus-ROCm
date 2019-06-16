@@ -1,1 +1,1 @@
-
+Added clang-roc-2.5.0.tar.gz, lld-roc-ocl-2.5.0.tar.gz, and llvm-roc-ocl-2.5.0.tar.gz tarballs because they need to be in the package.yml file. When downloading directly from official romc repository they have the same name. So I renamed the tarballs and use this repo as source.
