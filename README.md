@@ -4,7 +4,8 @@ Trying to create packaging scripts for the [AMD Compute Stack](https://github.co
 ---------------
 Current Problem: Installing "findlib":
 CANNOT INSTALL, Error message: "mkdir: cannot create directory ‘/etc/findlib’: Permission denied"
----------------
+
+
 Created packages and order of build:
 
 1) Numactl: Status of building: Package created.
