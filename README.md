@@ -2,7 +2,7 @@
 Trying to create packaging scripts for the [AMD Compute Stack](https://github.com/RadeonOpenCompute/ROCm) for Solus Linux eopkg,
 
 ---------------
-Current Problem: Installing "findlib":
+**Current Problem:** Installing "findlib":
 CANNOT INSTALL, Error message: "mkdir: cannot create directory ‘/etc/findlib’: Permission denied"
 
 ---------------
