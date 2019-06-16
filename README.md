@@ -107,5 +107,6 @@ Created packages and order of build:
                         /usr/lib64/cmake/z3/Z3Targets.cmake
                         /usr/lib64/libz3.so
 
-
+7) findlib: Dependency for LLVM, Clang.
+            CANNOT INSTALL, Error message: "mkdir: cannot create directory ‘/etc/findlib’: Permission denied"
          
