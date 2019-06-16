@@ -15,7 +15,7 @@ setup      : |
     ./configure -bindir /usr/bin \
                 -mandir /usr/share/man \
                 -sitelib %libdir%/ocaml \
-                -config /usr/bin/findlib/findlib.conf \
+                -config /etc/findlib/findlib.conf \
                 -no-custom
 build      : |
     %make all
