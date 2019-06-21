@@ -1,0 +1,21 @@
+name       : ROCm-Device-Libs
+version    : 2.5.0
+release    : 1
+source     :
+    - https://github.com/RadeonOpenCompute/ROCm-Device-Libs/archive/roc-2.5.0.tar.gz : d44b7161f9c3332c36c831119678d99fa9193056bcb79b2f85e1d8a22bece027
+license    : Open Source License
+component  : programming.devel
+summary    : ROCm Device libraries.
+description: |
+    ROCm Device libraries.
+builddeps  :
+    - ROCR
+    - ROCR-devel
+    - ROCR
+    - ROCR-devel
+setup      : |
+    %configure
+build      : |
+    %make
+install    : |
+    %make_install
