@@ -1,0 +1,34 @@
+name       : llvm-roc
+version    : 2.5.0
+release    : 1
+source     :
+    - https://github.com/RadeonOpenCompute/llvm/archive/roc-ocl-2.5.0.tar.gz : fbb005d13c01020878dbc5546b57cce10bcdbd9b605d3c5a27955819e6c57507
+    - https://github.com/RadeonOpenCompute/clang/archive/roc-2.5.0.tar.gz : 1611d533b670f2bd58ac1dce6cfb2a019ef6abdf119d657042e2a46c35dffe7e
+    - https://github.com/saitam757/ROCm-Solbuild/raw/master/renamed_rocm_packages/lld-roc-ocl-2.5.0.tar.gz : a910c565d249965be4eb0f5a00698b77181573271e3ec3f277c73297af9ed160
+license    : Apache License 2.0
+component  : programming.devel
+summary    : "ROCm llvm,lld,clang"
+description: |
+    "ROCm llvm,lld,clang"
+builddeps  :
+    - ROCR
+    - ROCR-devel
+    - z3
+    - z3-devel
+setup      : |
+    tar xvzf "${sources}/roc-2.5.0.tar.gz"
+    tar xvzf "${sources}/lld-roc-ocl-2.5.0.tar.gz"
+
+    ln -s lld-roc-ocl-2.5.0 tools/lld
+    ln -s roc-2.5.0 tools/clang
+
+    mkdir -p build/bin
+    
+    cd build
+    %cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=%libdir%/llvm/roc-2.5.0 -DLLVM_TARGETS_TO_BUILD="AMDGPU;X86" ..
+build      : |
+    cd build
+    %make
+install    : |
+    cd build
+    %make_install
