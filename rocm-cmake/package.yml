@@ -1,0 +1,29 @@
+name       : rocm-cmake
+version    : 0.2
+release    : 1
+source     :
+    - https://github.com/RadeonOpenCompute/rocm-cmake/archive/0.2.tar.gz : 027990ba28a928c030536ebae2457f3af22358dfac5048bb8731688a2fdc478c
+license    : MIT
+component  : programming.devel
+summary    : ROCM cmake modules provides cmake modules for common build tasks needed for the ROCM software stack.
+description: |
+    ROCM cmake modules provides cmake modules for common build tasks needed for the ROCM software stack.
+setup      : |
+    mkdir -p build/bin
+    cd build
+    cmake -DCMAKE_INSTALL_PREFIX=bin ..
+install    : |
+    cd build
+    cmake --build . --target install
+
+    install -Dm00644 bin/share/rocm/cmake/ROCMAnalyzers.cmake $installdir/usr/share/rocm/ROCMAnalyzers.cmake
+    install -Dm00644 bin/share/rocm/cmake/ROCMCreatePackage.cmake $installdir/usr/share/rocm/ROCMCreatePackage.cmake
+    install -Dm00644 bin/share/rocm/cmake/ROCMInstallTargets.cmake $installdir/usr/share/rocm/ROCMInstallTargets.cmake
+    install -Dm00644 bin/share/rocm/cmake/ROCMSetupVersion.cmake $installdir/usr/share/rocm/ROCMSetupVersion.cmake
+    install -Dm00644 bin/share/rocm/cmake/ROCMInstallSymlinks.cmake $installdir/usr/share/rocm/ROCMInstallSymlinks.cmake
+    install -Dm00644 bin/share/rocm/cmake/ROCMPackageConfigHelpers.cmake $installdir/usr/share/rocm/ROCMPackageConfigHelpers.cmake
+    install -Dm00644 bin/share/rocm/cmake/ROCMClangTidy.cmake $installdir/usr/share/rocm/ROCMClangTidy.cmake
+    install -Dm00644 bin/share/rocm/cmake/ROCMConfig.cmake $installdir/usr/share/rocm/ROCMConfig.cmake
+    install -Dm00644 bin/share/rocm/cmake/ROCMCppCheck.cmake $installdir/usr/share/rocm/ROCMCppCheck.cmake
+
+ 
