@@ -112,4 +112,7 @@ Created packages and order of build:
 
 7) findlib: Dependency for LLVM, Clang.
             CANNOT INSTALL, Error message: "mkdir: cannot create directory ‘/etc/findlib’: Permission denied"
+            
+8) llvm-rocm: Compiles, creates package, but clang etc is missing later ???
+9) rocm-device-libs: not compiling due to missing part in previous llv-rocm package
          
