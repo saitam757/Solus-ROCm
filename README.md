@@ -3,26 +3,15 @@ Trying to create packaging scripts for the [AMD Compute Stack](https://github.co
 
 Using [Gentoo](https://github.com/justxi/rocm) and [Arch](https://aur.archlinux.org/packages/?K=farnoy&SeB=m) packaging tries as templates for resolving dependency issues.
 
-| Package  | Information | Status |
-| ------------- | ------------- |------------- |
-| [Roct](https://github.com/saitam757/Solus-ROCm/tree/master/roct)  | [ROCT-Thunk-Interface](https://github.com/RadeonOpenCompute/ROCT-Thunk-Interface/tree/roc-2.7.0)  | :heavy_check_mark: |
-| [numactl](https://github.com/saitam757/Solus-ROCm/tree/master/numactl)  | Dependency of ROCT-Thunk-Interface  | :heavy_check_mark: |
-| [Rocr](https://github.com/saitam757/Solus-ROCm/tree/master/rocr)  | [ROCR-Runtime](https://github.com/RadeonOpenCompute/ROCR-Runtime) | :heavy_check_mark: |
+| Package  | Information | Version | Status |
+| ------------- | ------------- | ------------- | ------------- |
+| [Roct](https://github.com/saitam757/Solus-ROCm/tree/master/roct)  | Link to source: [ROCT-Thunk-Interface](https://github.com/RadeonOpenCompute/ROCT-Thunk-Interface/tree/roc-2.7.0)  | 2.7.0 | :heavy_check_mark: |
+| [numactl](https://github.com/saitam757/Solus-ROCm/tree/master/numactl)  | Dependency of ROCT-Thunk-Interface  | 2.0.12 | :heavy_check_mark: |
+| [Rocr](https://github.com/saitam757/Solus-ROCm/tree/master/rocr)  | Link to source: [ROCR-Runtime](https://github.com/RadeonOpenCompute/ROCR-Runtime) | 2.7.0 | :heavy_check_mark: |
+| [rocminfo](https://github.com/saitam757/Solus-ROCm/tree/master/rocminfo)  | Link to source: [rocminfo](https://github.com/RadeonOpenCompute/rocminfo) | 2.7.0 | :x: |
+| [rocm_bandwidth_test](https://github.com/saitam757/Solus-ROCm/tree/master/rocm_bandwidth_test)  | Link to source: [rocm_bandwidth_test](https://github.com/RadeonOpenCompute/rocm_bandwidth_test) | 1.3.0 | :heavy_check_mark: |
 
 
-
-4) Rocminfo:    ROCm Application for Reporting System Info 
-                Status of building: Package created.
-                
-            "lseopkg rocminfo-1.0.0-1-1-x86_64.eopkg" yields: 
-                /usr/bin/rocm_agent_enumerator
-                /usr/bin/rocminfo
-                
-5) rocm_bandwidth_test: Bandwidth test for ROCm 
-                        Status of building: Package created.
-                        
-            "lseopkg rocm_bandwidth_test-2.5.0-1-1-x86_64.eopkg" yields:
-                 /usr/bin/rocm_bandwidth_test
                  
 6) z3: Z3 is a theorem prover. Dependency for LLVM, Clang
          
