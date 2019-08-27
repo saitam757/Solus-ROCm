@@ -1,8 +1,8 @@
-name       : rocminfo
-version    : 1.0.0
+name       : roc
+version    : 2.7.0
 release    : 1
 source     :
-    - https://github.com/RadeonOpenCompute/rocminfo/archive/1.0.0.tar.gz : 858823b8d0e42c1c2b1ee41bdb8410068a907a62ea1f629531db1b74664a1403
+    - https://github.com/RadeonOpenCompute/rocminfo/archive/roc-2.7.0.tar.gz : 5f7ec4665c4100e69c4216cee3974f03d1017311f9d297ef7c9cf3b58e7edb0f
 license    : Open Source License (NCSA)
 component  : programming.devel
 summary    : ROCm Application for Reporting System Info
