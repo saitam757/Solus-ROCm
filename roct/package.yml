@@ -1,8 +1,8 @@
 name       : ROCT
-version    : 2.5.0
+version    : 2.7.0
 release    : 1
-source     :
-    - https://github.com/RadeonOpenCompute/ROCT-Thunk-Interface/archive/roc-2.5.0.tar.gz : 1ec04105c9569040c7bdd1a7513c17a0c4d67d31526c4bf33394842ebd482167
+source     : 
+    - https://github.com/RadeonOpenCompute/ROCT-Thunk-Interface/archive/roc-2.7.0.tar.gz : 11e6dceec675d3c5d5dfb7e9b6daae29a57c7904a6d36515a4832be32e303c47
 license    : MIT
 component  : programming.devel
 summary    : This repository includes the user-mode API interfaces used to interact with the ROCk driver. Currently supported agents include only the AMD/ATI Fiji family of discrete GPUs.
@@ -20,16 +20,12 @@ build      : |
     %make
 install    : |
     cd build
-
+    
     install -D -m 00644 libhsakmt.so.1.0.6 $installdir/%libdir%/libhsakmt.so.1.0.6
     ln -sv libhsakmt.so.1.0.6 $installdir/%libdir%/libhsakmt.so.1
     ln -sv libhsakmt.so.1 $installdir/%libdir%/libhsakmt.so
-
+    
     cd ../include
     install -Dm00644 hsakmt.h $installdir/usr/include/hsakmt.h
     install -Dm00644 hsakmttypes.h $installdir/usr/include/hsakmttypes.h
     install -Dm00644 linux/kfd_ioctl.h $installdir/usr/include/linux/kfd_ioctl.h
-
-    #echo '/usr/lib64' > x86_64-libhsakmt.conf
-    #install -Dm00644 x86_64-libhsakmt.conf $installdir/usr/share/ld.so.conf.d/x86_64-libhsakmt.conf
-
