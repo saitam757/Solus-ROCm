@@ -1,7 +1,7 @@
 # Solus - ROCm Packaging
-Trying to create packaging scripts for the [AMD Compute Stack](https://github.com/RadeonOpenCompute/ROCm) for Solus Linux eopkg,
+Packaging scripts for the [AMD Compute Stack](https://github.com/RadeonOpenCompute/ROCm) for Solus Linux eopkg,
 
-Using [Gentoo](https://github.com/justxi/rocm) and [Arch](https://aur.archlinux.org/packages/?K=farnoy&SeB=m) packaging tries as templates for resolving dependency issues.
+Using [Gentoo](https://github.com/justxi/rocm) and [Arch](https://aur.archlinux.org/packages/?K=farnoy&SeB=m) as templates for packaging and resolving dependency issues.
 
 | Package  | Information | Version | Status |
 | ------------- | ------------- | ------------- | ------------- |
