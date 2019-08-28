@@ -1,0 +1,11 @@
+--- rocminfo-roc-2.7.0/rocminfo.cc	2019-07-18 12:49:10.000000000 +0200
++++ /home/bender/Downloads/rocminfo-roc-2.7.0/rocminfo.cc	2019-08-28 22:20:56.399906845 +0200
+@@ -72,7 +72,7 @@
+     char* err_str = NULL;                                                     \
+     if (hsa_status_string(err,                                                \
+             (const char**)&err_str) != HSA_STATUS_SUCCESS) {                  \
+-      snprintf(&(err_val[0]), sizeof(err_val[12]), "%#x", (uint32_t)err);     \
++      snprintf(&(err_val[0]), sizeof(err_val), "%#x", (uint32_t)err);     \
+       err_str = &(err_val[0]);                                                \
+     }                                                                         \
+     printf("%shsa api call failure at: %s:%d\n",                              \
